@@ -1,23 +1,25 @@
-import time as t
+import time
+
+from engine.clock import Clock
 
 
 class Engine:
-    def __init__(self, gui, simulation):
+    def __init__(self, gui, simulation, fps=60):
         self.gui = gui
         self.simulation = simulation
-        self.tick = 10
+        self.clock = Clock(fps)
         self.running = False
 
     def loop(self):
         while self.running:
-            t0 = t.time()
-            print("Работаю")
+            print(time.time())
             # user input
             pass
             # simulation
-
             pass
             # render
+            pass
+            dt = self.clock.tick()
 
     def start(self):
         print("Стартую")
