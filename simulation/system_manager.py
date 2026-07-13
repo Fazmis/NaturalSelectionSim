@@ -1,4 +1,4 @@
-class SimulationsManager:
+class SystemManager:
     def __init__(self):
         self.simulations = [
 
