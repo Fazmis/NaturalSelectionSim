@@ -6,4 +6,4 @@ class DesktopApp:
         self.WIDTH = 1024
         self.HEIGHT = 512
         self.root = tk.Tk()
-        self.visual_render = VisualRender(self, self.WIDTH, self.HEIGHT)
+        self.visual_render = VisualRender(self.root, self.WIDTH, self.HEIGHT)
