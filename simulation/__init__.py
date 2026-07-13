@@ -1,4 +1,4 @@
-from .simulations_manager import SimulationsManager
+from .system_manager import SimulationsManager
 
 
 __all__ = [
