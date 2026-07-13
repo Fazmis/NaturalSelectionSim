@@ -1,11 +1,11 @@
 from gui import DesktopApp
-from simulation import SimulationsManager
+from simulation import Simulation
 from engine import Engine
 
 
 def main() -> None:
     gui = DesktopApp()
-    simulation = SimulationsManager()
+    simulation = Simulation()
     engine = Engine(gui=gui, simulation=simulation, fps=1)
     engine.start()
 

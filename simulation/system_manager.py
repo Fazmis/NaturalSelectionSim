@@ -1,10 +1,10 @@
 class SystemManager:
     def __init__(self):
-        self.simulations = [
+        self.systems = [
 
         ]
 
-    def simulate(self):
-        for simulation in self.simulations:
-            simulation.simulate()
+    def simulate(self, dt):
+        for system in self.systems:
+            system.simulate(dt)
         

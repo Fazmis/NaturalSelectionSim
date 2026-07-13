@@ -1,6 +1,6 @@
-from .system_manager import SimulationsManager
+from .simulation import Simulation
 
 
 __all__ = [
-    "SimulationsManager",
+    "Simulation",
 ]
