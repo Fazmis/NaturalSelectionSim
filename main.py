@@ -3,10 +3,10 @@ from simulation import SimulationsManager
 from engine import Engine
 
 
-def main():
+def main() -> None:
     gui = DesktopApp()
     simulation = SimulationsManager()
-    engine = Engine(gui=gui, simulation=simulation)
+    engine = Engine(gui=gui, simulation=simulation, fps=1)
     engine.start()
 
 if __name__ == '__main__':
