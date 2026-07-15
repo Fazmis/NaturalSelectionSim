@@ -1,5 +1,3 @@
-import time
-
 from engine.clock import Clock
 
 
@@ -11,12 +9,14 @@ class Engine:
         self.running = False
 
     def loop(self):
+        dt = 0
+
         while self.running:
-            print(time.time())
+            print(dt)
             # user input
             pass
             # simulation
-            pass
+            self.simulation.simulate(dt)
             # render
             pass
             dt = self.clock.tick()
@@ -24,6 +24,7 @@ class Engine:
     def start(self):
         print("Стартую")
         self.running = True
+        self.clock.reset()
         self.loop()
 
     def stop(self):
