@@ -4,13 +4,33 @@ Natural selection simulation written in Python.
 
 ## About
 
-This project is a simulation of evolutionary processes based on natural selection.
+NaturalSelectionSim is an experimental project that simulates evolutionary processes based on natural selection.
 
-The goal is to create a system where creatures can evolve through interactions with the environment, inherited traits, and natural selection.
+![NaturalSelectionSim Demo](docs/demo.gif)
+
+The long-term goal is to create a dynamic ecosystem where creatures evolve through interactions with the environment, inherited traits, mutations, and natural selection.
 
 ## Status
 
-Work in progress.
+Early prototype.
+
+Currently implemented:
+
+- ECS-based architecture
+- Simulation update loop
+- Basic Tkinter visualization
+- Component-based movement system
+- Rendering pipeline between simulation and GUI
+
+The evolutionary mechanics are not implemented yet.
+
+## Current features
+
+- Entity Component System (ECS)
+- Decoupled engine, simulation, and GUI
+- Real-time simulation loop
+- Basic entity movement
+- Desktop visualization using Tkinter
 
 ## Planned creature types
 
@@ -37,24 +57,24 @@ Work in progress.
 
 ## Architecture
 
-The project uses an ECS-inspired architecture with separated engine, ECS, simulation, and visualization layers.
+The project follows an ECS-inspired architecture with separated engine, ECS, simulation, and visualization layers.
 
-The project is divided into:
+Project structure:
 
-- `engine` — application loop, timing control, and simulation updates
-- `ecs` — entity-component-system core responsible for entity management, component storage, and system coordination
-- `simulation` — natural selection simulation logic, including simulation-specific components and systems
-- `gui` — visualization layer responsible for rendering simulation state
+- `engine` — application loop, timing control, and communication between the simulation and GUI
+- `ecs` — entity-component-system core responsible for entity management, component storage, querying, and system coordination
+- `simulation` — simulation logic, components, and systems implementing world behavior
+- `gui` — visualization layer responsible for rendering the simulation state
 
 The ECS core consists of:
 
 - `EntityManager` — creates and manages entity identifiers
-- `ComponentManager` — stores components and manages entity-component relationships
+- `ComponentManager` — stores components and provides efficient component queries
 - `SystemManager` — manages and updates simulation systems
 
-The GUI layer is separated from simulation logic and is designed to support multiple implementations:
+The visualization layer is intentionally separated from the simulation logic, making it possible to support multiple frontends in the future:
 
-- Desktop application
+- Desktop application (implemented)
 - Web application (planned)
 
 ## Running
@@ -63,3 +83,6 @@ Development entry point:
 
 ```bash
 python main.py
+```
+
+Running the project opens a simple Tkinter window where entities move around the simulated world.
