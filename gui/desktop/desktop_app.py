@@ -7,3 +7,7 @@ class DesktopApp:
         self.HEIGHT = 512
         self.root = tk.Tk()
         self.visual_render = VisualRender(self.root, self.WIDTH, self.HEIGHT)
+        self.root.mainloop()
+
+    def render(self, render_data):
+        pass

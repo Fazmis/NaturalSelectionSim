@@ -7,7 +7,7 @@ class Ecs:
     def __init__(self):
         self.entity_manager = EntityManager()
         self.component_manager = ComponentManager()
-        self.system_manager = SystemManager()
+        self.system_manager = SystemManager(self)
 
     def update(self, dt):
         self.system_manager.update(dt)
@@ -17,5 +17,7 @@ class Ecs:
         self.component_manager.add_entity(entity_id, components)
 
     def add_system(self, system):
-        activated_system = system(self.component_manager)
-        self.system_manager.add_system(activated_system)
+        self.system_manager.add_system(system)
+
+    def get_render_data(self):
+        return self.system_manager.get_render_data()

@@ -18,7 +18,9 @@ class Engine:
             # simulation
             self.simulation.simulate(dt)
             # render
-            pass
+            render_data = self.simulation.get_render_data()
+            self.gui.render(render_data)
+
             dt = self.clock.tick()
 
     def start(self):

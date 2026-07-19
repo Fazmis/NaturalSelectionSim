@@ -1,4 +1,4 @@
-from .components import Position, Health
+from .components import Position, Health, RenderAble
 from .systems import PrintAllSystem
 
 
@@ -10,7 +10,8 @@ class Simulation:
         for _ in range(10):
             species = [
                 Position(0, 0),
-                Health(10)
+                Health(10),
+                RenderAble()
                        ]
             self.ecs.add_entity(species)
 
@@ -19,3 +20,6 @@ class Simulation:
 
     def simulate(self, dt):
         self.ecs.update(dt)
+
+    def get_render_data(self):
+        return self.ecs.get_render_data()
