@@ -9,7 +9,7 @@ def main() -> None:
     ecs = Ecs()
     simulation = Simulation(ecs)
     simulation.initialize()
-    engine = Engine(gui=gui, simulation=simulation, fps=1)
+    engine = Engine(gui=gui, simulation=simulation, fps=60)
     engine.start()
 
 if __name__ == '__main__':

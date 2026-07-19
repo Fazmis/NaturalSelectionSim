@@ -1,5 +1,5 @@
-from .components import Position, Health, RenderAble
-from .systems import PrintAllSystem
+from .components import Position, Velocity, Health, RenderAble
+from .systems import PrintAllSystem, MovementSystem
 
 
 class Simulation:
@@ -10,12 +10,14 @@ class Simulation:
         for _ in range(10):
             species = [
                 Position(0, 0),
+                Velocity(),
                 Health(10),
-                RenderAble()
+                RenderAble(),
                        ]
             self.ecs.add_entity(species)
 
         self.ecs.add_system(PrintAllSystem)
+        self.ecs.add_system(MovementSystem)
 
 
     def simulate(self, dt):
