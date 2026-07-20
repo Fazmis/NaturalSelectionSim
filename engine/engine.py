@@ -12,14 +12,13 @@ class Engine:
         dt = 0
 
         while self.running:
-            print(dt)
             # user input
             pass
             # simulation
             self.simulation.simulate(dt)
             # render
             render_data = self.simulation.get_render_data()
-            self.gui.render(render_data)
+            self.gui.render(render_data, dt)
 
             dt = self.clock.tick()
 
